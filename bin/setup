@@ -30,3 +30,21 @@ then
 else
   echo "Pow not set up but the team uses it for this project. Setup: http://goo.gl/RaDPO"
 fi
+
+# Set up staging and production git remotes.
+git remote add staging git@heroku.com:thingr-staging.git || true
+git remote add production git@heroku.com:thingr-production.git || true
+
+# Join the staging and production apps.
+if heroku join --app thingr-staging &> /dev/null; then
+  echo 'You are a collaborator on the "thingr-staging" Heroku app'
+else
+  echo 'Ask for access to the "thingr-staging" Heroku app'
+fi
+
+if heroku join --app thingr-production &> /dev/null; then
+  echo 'You are a collaborator on the "thingr-production" Heroku app'
+else
+  echo 'Ask for access to the "thingr-production" Heroku app'
+fi
+
