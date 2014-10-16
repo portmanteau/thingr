@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require swiper
+//= require_tree ./behaviors
 //= require_tree .
