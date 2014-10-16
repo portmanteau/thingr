@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 ruby '2.1.2'
 
@@ -14,8 +15,10 @@ gem 'neat', '~> 1.5.1'
 gem 'pg'
 gem 'rack-timeout'
 gem 'rails', '4.1.1'
+gem 'rails-assets-swiper'
 gem 'recipient_interceptor'
 gem 'sass-rails', '~> 4.0.3'
+gem 'slim-rails'
 gem 'simple_form'
 gem 'title'
 gem 'uglifier'
