@@ -1,0 +1,21 @@
+diff --git a/app/views/layouts/application.html.slim b/app/views/layouts/application.html.slim
+new file mode 100644
+index 0000000..6a166fc
+--- /dev/null
++++ b/app/views/layouts/application.html.slim
+@@ -0,0 +1,15 @@
++doctype html
++html
++  head
++    meta[charset="utf-8"]
++    meta[name="ROBOTS" content="NOODP"]
++    meta[name="viewport" content="width=device-width, initial-scale=1"]
++    title
++      = title
++    = stylesheet_link_tag :application, :media => 'all'
++    = csrf_meta_tags
++  body[class="#{body_class}"]
++
++  = render 'flashes'
++  = yield
++  = render 'javascript'
