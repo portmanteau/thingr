@@ -5,5 +5,7 @@ class ItemsController < ApplicationController
     else
       render "index/index"
     end
+
+    @items = Item.all
   end
 end

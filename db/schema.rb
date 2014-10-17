@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20141017182056) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+  create_table "items", force: true do |t|
+    t.string   "name",                          null: false
+    t.string   "description"
+    t.integer  "value_dollars",     default: 0, null: false
+    t.integer  "value_sentimental", default: 0, null: false
+    t.string   "image",                         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
