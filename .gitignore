@@ -1,4 +1,5 @@
 !.keep
+*.diff
 *.DS_Store
 *.swo
 *.swp
