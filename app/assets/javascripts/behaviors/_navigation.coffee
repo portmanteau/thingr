@@ -20,7 +20,6 @@ class PageController
       @_contentSwiper.reInit(true) #hack
     )
 
-
   _setContent: (uri, index) ->
     pane = $('.pane[data-index=' + index + ']')
 
@@ -63,6 +62,11 @@ class PageController
           $(window).trigger('navchange',
             index: swiper.activeIndex
           )
+        onSlideReset: (swiper)=>
+          console.log(arguments)
+          $(window).trigger('navchange',
+            index: swiper.activeIndex
+          )
 
   _indexForUri: (uri)->
     index = 0
@@ -87,3 +91,4 @@ class PageController
 $ ->
   pageController = new PageController()
   pageController.setView(window.location.pathname)
+  FastClick.attach(document.body)

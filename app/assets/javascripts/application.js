@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require fastclick
 //= require swiper
 //= require_tree ./behaviors
 //= require_tree .
