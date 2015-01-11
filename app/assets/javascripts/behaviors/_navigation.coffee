@@ -1,4 +1,6 @@
 class PageController
+  index: 0
+
   constructor: () ->
     @_setUpLinks()
     @_setUpPopState()
@@ -11,6 +13,7 @@ class PageController
 
   _bindEventListeners: ()->
     $(window).on('navchange', (event, data)=>
+      console.log('navchange')
       slide = $('.nav-item[data-index=' + data.index + ']')[0]
       uri = slide.pathname
       window.history.pushState(null, null, uri)
@@ -30,7 +33,6 @@ class PageController
       error: (data)=>
         $(pane).html(data.responseText)
         @_swipeContent(index)
-        console.log(data)
     )
 
   _swipeContent: (index)->
@@ -40,8 +42,7 @@ class PageController
       @_contentSwiper = new Swiper '.swiper-container.content',
         initialSlide: index
         calculateHeight: true
-        onSlideChangeStart: (swiper)=>
-          console.log(arguments)
+        onTouchEnd: (swiper)=>
           $(window).trigger('navchange',
             index: swiper.activeIndex
           )
@@ -58,12 +59,10 @@ class PageController
         centeredSlides: true
         slidesPerView: 3
         onSlideChangeStart: (swiper)=>
-          console.log(arguments)
           $(window).trigger('navchange',
             index: swiper.activeIndex
           )
         onSlideReset: (swiper)=>
-          console.log(arguments)
           $(window).trigger('navchange',
             index: swiper.activeIndex
           )
@@ -77,6 +76,7 @@ class PageController
 
   _setUpLinks: ()->
     $('a').on('click', (event) =>
+      console.log('click')
       window.history.pushState(null, null, event.target.pathname)
       @setView(event.target.pathname)
       return false
@@ -84,7 +84,6 @@ class PageController
 
   _setUpPopState: ()->
     $(window).on('popstate', ()=>
-      console.log arguments
       @setView(window.location.pathname)
     )
 
