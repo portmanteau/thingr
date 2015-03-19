@@ -36,7 +36,7 @@ class PageController
   _swipeContent: (index)->
     if (@_contentSwiper)
       @_contentSwiper.swipeTo index, 1000, false
-    else
+    else if $('.swiper-container.content').length
       @_contentSwiper = new Swiper '.swiper-container.content',
         initialSlide: index
         calculateHeight: true
@@ -52,7 +52,7 @@ class PageController
   _setNav: (paneIndex) ->
     if (@_navSwiper)
       @_navSwiper.swipeTo paneIndex, 1000, false
-    else
+    else if $('.swiper-container.navbar').length
       @_navSwiper = new Swiper '.swiper-container.navbar',
         initialSlide: paneIndex
         centeredSlides: true
@@ -76,7 +76,7 @@ class PageController
     index
 
   _setUpLinks: ()->
-    $('a').on('click', (event) =>
+    $("a[data~='quicklink'").on('click', (event) =>
       window.history.pushState(null, null, event.target.pathname)
       @setView(event.target.pathname)
       return false

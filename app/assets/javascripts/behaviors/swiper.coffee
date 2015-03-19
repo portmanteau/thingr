@@ -1,5 +1,5 @@
 $ ->
-  $('.swiper-container.hone-swiper').each ()->
+  $('.swiper-container.home-swiper').each ()->
     new Swiper(this,
       pagination: '.pagination'
       paginationClickable: true

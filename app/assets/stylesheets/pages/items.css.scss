@@ -1,15 +1,24 @@
-.items-index {
-  .swiper-container, .image {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-  }
+.full-screen {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-container.content {
+  @extend .full-screen;
+
   .swiper-slide {
     position: relative;
   }
+}
+
+.item {
+  position: relative;
+
+  .image {
+    width: 100%;
+    height: auto;
+  }
+
   .name {
     position: absolute;
     font-size: 3em;
@@ -20,3 +29,4 @@
     bottom: 1em;
   }
 }
+

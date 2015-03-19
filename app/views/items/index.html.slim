@@ -1,13 +1,7 @@
-div [style='text-align:center; padding-top: 60px;']
-  | Items!!!
-main
-  .swiper-container
-    .swiper-wrapper
-      - @items.each do |item|
-        .swiper-slide
-          img.image [src="#{item.image}"]
-          .name
-            = item.name
+- @items.each do |item|
+  /.swiper-slide
+  .item
+    img.image [src="#{item.image}"]
+    .name
+      = item.name
 
-
-nav.pagination

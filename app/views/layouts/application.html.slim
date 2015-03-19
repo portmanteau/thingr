@@ -8,8 +8,10 @@ html
       = title
     = stylesheet_link_tag :application, :media => 'all'
     = csrf_meta_tags
-  body [class="#{body_class}"]
-    = render 'layouts/navigation'
-    = render 'flashes'
-    = yield
+  body
+    - if current_user.present?
+      = render 'layouts/navigation'
+    .swiper-container.content
+      .swiper-wrapper
+        = yield
     = render 'javascript'
