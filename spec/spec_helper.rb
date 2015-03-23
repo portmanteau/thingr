@@ -6,6 +6,9 @@ require 'rspec/rails'
 require 'shoulda/matchers'
 require 'webmock/rspec'
 
+include Warden::Test::Helpers
+Warden.test_mode!
+
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
 
 module Features
@@ -17,6 +20,7 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 
+  config.include FactoryGirl::Syntax::Methods
   config.include Features, type: :feature
   config.include Formulaic::Dsl, type: :feature
 
@@ -24,8 +28,12 @@ RSpec.configure do |config|
   config.order = 'random'
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.use_transactional_fixtures = false
+  config.after :each do
+    Warden.test_reset!
+  end
 end
 
 ActiveRecord::Migration.maintain_test_schema!
 Capybara.javascript_driver = :webkit
 WebMock.disable_net_connect!(allow_localhost: true)
+
