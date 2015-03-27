@@ -38,11 +38,6 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'pry-rails'
-  gem 'pry'
-  gem 'pry-remote'
-  gem 'pry-stack_explorer'
-  gem 'pry-byebug' 
-  gem 'rspec-rails', '~> 2.14.0'
 end
 
 group :test do
