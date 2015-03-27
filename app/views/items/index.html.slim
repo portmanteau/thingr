@@ -1,7 +1,12 @@
-- @items.each do |item|
-  /.swiper-slide
-  .item
-    img.image [src="#{item.image}"]
-    .name
-      = item.name
+main.pages-home
+  .swiper-container.home-swiper
+    .swiper-wrapper
+      - @items.each do |item|
+        article.swiper-slide.slide
+          section.slide-inner-text
+            .item
+              .name
+                = item.name
+              .description
+                = item.description
 
