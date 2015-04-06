@@ -1,8 +1,7 @@
 require "spec_helper"
 
 describe Item do
-  it "belongs to a user" do
-    user = create(:user)
-    expect(user).to be_a_new_record
-  end
+  it {should belong_to(:user)}
+  it { should validate_presence_of ( :name ) }
+  it { should validate_presence_of ( :description ) }
 end
