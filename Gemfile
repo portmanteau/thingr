@@ -26,6 +26,8 @@ gem 'simple_form'
 gem 'title'
 gem 'uglifier'
 gem 'unicorn'
+gem 'paperclip'
+gem 'aws-sdk'
 
 group :development do
   gem 'foreman'
