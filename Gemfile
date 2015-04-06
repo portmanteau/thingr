@@ -27,7 +27,8 @@ gem 'title'
 gem 'uglifier'
 gem 'unicorn'
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
+gem 'fog'
 
 group :development do
   gem 'foreman'
