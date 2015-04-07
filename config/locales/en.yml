@@ -9,3 +9,40 @@ en:
       default: '%a, %b %-d, %Y at %r'
       date: '%b %-d, %Y'
       short: '%B %d'
+
+  items:
+    add_item: Add Item
+    item_added: Item Added!
+
+  errors:
+    fix_errors: Please correct errors below
+
+  helpers:
+    submit:
+      item:
+        create: "Add item"
+        update: "Save Changes"
+
+  simple_form:
+    labels:
+      item:
+        name: 'Item Name'
+        description: 'Description'
+        submit: 'Submit'
+      user:
+        username: 'User name'
+        password: 'Password'
+    hints:
+      user:
+        username: 'User name to sign in.'
+        password: 'No special characters, please.'
+    placeholders:
+      user:
+        username: 'Your username'
+        password: '****'
+    include_blanks:
+      user:
+        age: 'Rather not say'
+    prompts:
+      user:
+        gender: 'Select your gender'
