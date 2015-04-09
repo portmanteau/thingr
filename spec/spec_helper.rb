@@ -5,6 +5,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require "rspec/rails"
 require "shoulda/matchers"
 require "webmock/rspec"
+require "paperclip/matchers"
 
 include Warden::Test::Helpers
 Warden.test_mode!
@@ -31,6 +32,8 @@ RSpec.configure do |config|
   config.after :each do
     Warden.test_reset!
   end
+
+  config.include Paperclip::Shoulda::Matchers
 end
 
 ActiveRecord::Migration.maintain_test_schema!

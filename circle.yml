@@ -1,1 +1,7 @@
 general:
+
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: thingr-staging

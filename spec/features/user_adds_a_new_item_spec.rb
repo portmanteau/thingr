@@ -9,8 +9,10 @@ feature "User Adds A New Item" do
     fill_in t("simple_form.labels.item.name"), with: "Rad Item"
     fill_in t("simple_form.labels.item.description"),
       with: "The best thing ever.\n Better than everything"
+    attach_file('Image', File.expand_path("../../asset_specs/photos/item.JPG", __FILE__))
 
     click_button t("helpers.submit.item.create")
     expect(page).to have_content("Rad Item")
+    expect(page).to have_selector("img[src*='item.JPG']")
   end
 end
