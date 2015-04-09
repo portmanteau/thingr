@@ -1,12 +1,11 @@
 @charset 'utf-8';
 
-@import 'swiper';
+@import "bourbon";
+@import "base/grid-settings";
+@import "base/base";
+@import "neat";
 
-@import 'bourbon';
-@import 'base/grid-settings';
-@import 'neat';
-@import 'base/base';
-
-@import 'navigation';
+@import 'partials/layout';
+@import 'partials/navigation';
 @import 'pages/home';
 @import 'pages/items';

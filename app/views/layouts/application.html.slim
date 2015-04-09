@@ -9,9 +9,10 @@ html
     = stylesheet_link_tag :application, :media => 'all'
     = csrf_meta_tags
   body
-    - if current_user.present?
-      = render 'layouts/navigation'
-    .swiper-container.content
-      .swiper-wrapper
-        = yield
+    .main 
+      - if current_user.present?
+        = render 'layouts/navigation'
+      = yield
+      - if current_user.present?
+        = render 'layouts/footer'
     = render 'javascript'
