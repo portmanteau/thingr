@@ -1,8 +1,8 @@
+.wrapper
   - @items.each do |item|
-    .item
+    li.item
         .name
           = item.name
-        .description
-          = item.description
+        .image
           = image_tag item.image.url(:thumb)
 

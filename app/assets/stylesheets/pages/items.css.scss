@@ -1,32 +1,20 @@
-.full-screen {
-  width: 100%;
-  height: auto;
+.wrapper { 
+  @include shift(2);
+  @include span-columns(10); 
 }
 
-.swiper-container.content {
-  @extend .full-screen;
-
-  .swiper-slide {
-    position: relative;
-  }
-}
-
-.item {
-  position: relative;
-
+li.item {
+  @include span-columns(2 of 10);
+  
   .image {
-    width: 100%;
-    height: auto;
+    text-align: center;
   }
 
   .name {
-    position: absolute;
     font-size: 3em;
+    text-align: center;
     color: white;
     text-shadow: 0 0 6px black;
-    width: 100%;
-    text-align: center;
-    bottom: 1em;
   }
+  
 }
-
