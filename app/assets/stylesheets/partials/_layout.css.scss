@@ -1,0 +1,19 @@
+.main {
+  @include outer-container;
+}
+
+.wrapper { 
+  @include shift(2);
+  @include span-columns(10); 
+  
+  .form {
+    @include span-columns(8 of 10);
+    padding: 5px 0;
+
+    textarea {
+      height: 160px; 
+    }
+  }
+
+}
+

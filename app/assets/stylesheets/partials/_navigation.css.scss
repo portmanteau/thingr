@@ -1,0 +1,17 @@
+nav.navbar {
+  @include clearfix;
+  position: relative;
+  text-align: center;
+  clear: both;
+  width: 100%;
+  overflow: visible;
+  border-bottom: 1px solid $base-border-color;
+  line-height: 2;
+  cursor: pointer;
+  margin: em(30) 0;
+}
+nav li {
+  margin: .5em 0;
+  display: inline-block;
+  @include span-columns(4);
+}
