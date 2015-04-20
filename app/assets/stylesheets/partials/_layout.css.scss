@@ -3,17 +3,13 @@
 }
 
 .wrapper { 
-  @include shift(2);
+  @include shift(1);
   @include span-columns(10); 
   
-  .form {
-    @include span-columns(8 of 10);
+  textarea {
+    @include span-columns(8);
+    height: 160px; 
     padding: 5px 0;
-
-    textarea {
-      height: 160px; 
     }
-  }
-
 }
 

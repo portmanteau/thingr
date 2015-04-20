@@ -1,25 +1,20 @@
 main.pages-home
-  .swiper-container.home-swiper
-    .swiper-wrapper
-      article.swiper-slide.slide-1
-        section.slide-inner-text
-          header
-            | Welcome to
-            h1 Thingr
-          p Thingr is a social bartering app.
-          p
-            | Thingr helps you get rid of the stuff you don't want, and get stuff that you do.
-      article.swiper-slide
-        section.slide-inner-text
-          header.h1 Swap Thing...rs
-          p
-            | Thingr's photocentric-design helps you list your offers, and peruse others' offers in a simple and intuitive way.
-          p
-            | Thingr's algorithms take sentimental value into account, optimizing to keep certain thingrs "in the family".
-      article.swiper-slide
-        section.slide-inner-text
-          header.h1 Build Karmum
-          p If you decide to give something away for free, Thingr wil award you with Karmum.
-          p Karmum isn't a real type of money.  It's just a number.
-          = link_to "Okay, let's start!", items_path, { class: 'button primary' }
-  nav.pagination
+  .wrapper
+    header
+      | Welcome to
+      h1 Thingr
+    p Thingr is a social bartering app.
+    p
+      | Thingr helps you get rid of the stuff you don't want, and get stuff that you do.
+    header 
+    h1 Swap Thing...rs
+    p
+      | Thingr's photocentric-design helps you list your offers, and peruse others' offers in a simple and intuitive way.
+    p
+      | Thingr's algorithms take sentimental value into account, optimizing to keep certain thingrs "in the family".
+      p
+    header 
+    h1 Build Karmum
+    p If you decide to give something away for free, Thingr wil award you with Karmum.
+    p Karmum isn't a real type of money.  It's just a number.
+    = link_to "Okay, let's start!", items_path, { class: 'button primary' }

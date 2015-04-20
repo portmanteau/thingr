@@ -1,11 +1,5 @@
-.wrapper { 
-  @include shift(2);
-  @include span-columns(10); 
-}
-
-li.item {
-  @include span-columns(2 of 10);
-  
+.item {
+  @include span-columns(3);
   .image {
     text-align: center;
   }
@@ -16,5 +10,4 @@ li.item {
     color: white;
     text-shadow: 0 0 6px black;
   }
-  
 }

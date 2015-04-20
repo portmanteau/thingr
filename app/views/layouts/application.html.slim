@@ -10,8 +10,7 @@ html
     = csrf_meta_tags
   body
     .main 
-      - if current_user.present?
-        = render 'layouts/navigation'
+      = render 'layouts/navigation'
       = yield
       - if current_user.present?
         = render 'layouts/footer'

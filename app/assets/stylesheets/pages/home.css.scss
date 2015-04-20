@@ -1,37 +1,12 @@
 .pages-home {
   text-align: center;
+  @include shift(1);
+  @include span-columns(10);
   header {
     margin-bottom: 2vh;
+
   }
-  .swiper-slide {
-    height: auto !important;
-  }
-  .button {
-    margin-top: 2vh;
-  }
-  .swiper-wrapper {
-    width: 20000px; // https://github.com/nolimits4web/Swiper/issues/751
-  }
-  .slide-inner-text {
-    margin: auto;
-    max-width: 480px;
-    padding: 5vh 2em;
-  }
-  .pagination {
-    @include position(fixed, null null 1em 50%);
-    margin-left: -4.5em;
-    width: 9em;
-    z-index: 1;
-  }
-  .swiper-pagination-switch {
-    background: $base-link-color;
-    border-radius: 100%;
-    display: inline-block;
-    height: 1em;
-    margin: 0 1em;
-    width: 1em;
-    &.swiper-active-switch {
-      background: $hover-link-color;
-    }
+  p {
+    text-align: left;
   }
 }
