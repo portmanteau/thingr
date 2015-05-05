@@ -1,5 +1,8 @@
-nav.navbar.swiper-container
-  .swiper-wrapper
-    = link_to "settings", "users/edit", class:'nav-item swiper-slide', data: { index: 0, title: "settings" }
-    = link_to "items", items_path, class:'nav-item swiper-slide', data: { index: 1, title: "items" }
-    = link_to "add-items", new_item_path, class:'nav-item swiper-slide', data: { index: 2, title: "add-items" }
+nav.navbar
+    ul
+      li 
+        h1 Thingr
+    - if current_user.present?
+        li = link_to "settings", edit_user_registration_path
+        li = link_to "items", items_path
+        li = link_to "add-items", new_item_path

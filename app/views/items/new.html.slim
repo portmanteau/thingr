@@ -1,14 +1,11 @@
-main.pages-home
-  .swiper-container.home-swiper
-    .swiper-wrapper
-      article.swiper-slide.slide-1
-        section.slide-inner-text
-          header
-            h2
-              = t("items.add_an_item")
-            = simple_form_for @item do |f|
-              = f.input :name
-              = f.input :description
-              = f.input :image, as: :file
-              = f.button :submit
+.wrapper
+  .form
+    header
+      h2
+        = t("items.add_an_item")
+      = simple_form_for @item do |f|
+        = f.input :name
+        = f.input :description, as: :text
+        = f.input :image, as: :file
+        = f.button :submit
 
